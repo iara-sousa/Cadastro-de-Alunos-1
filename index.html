@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Alunos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="menu">
+        <h2>Alunos</h2>
+
+        <button onclick="mostrarTela('home')">Home</button>
+
+        <button onclick="mostrarTela('cadastro')">
+            Cadastrar
+        </button>
+
+        <button onclick="mostrarTela('lista')">
+            Alunos
+        </button>
+
+        <button onclick="logout()">
+            Sair
+        </button>
+    </aside>
+
+    <main>
+
+        <section id="home">
+            <h1>Cadastro de Alunos</h1>
+
+            <p>
+                Sistema desenvolvido para gerenciamento
+                de alunos.
+            </p>
+        </section>
+
+        <section id="cadastro" class="oculto">
+
+            <h2>Novo Aluno</h2>
+
+            <input
+                type="text"
+                id="nome"
+                placeholder="Nome Completo">
+
+            <input
+                type="text"
+                id="matricula"
+                placeholder="Matrícula">
+
+            <input
+                type="number"
+                id="idade"
+                placeholder="Idade">
+
+            <input
+                type="text"
+                id="curso"
+                placeholder="Curso">
+
+            <input
+                type="text"
+                id="escola"
+                placeholder="Escola">
+
+            <button onclick="salvarAluno()">
+                Salvar
+            </button>
+
+        </section>
+
+        <section id="lista" class="oculto">
+
+            <h2>Alunos</h2>
+
+            <input
+                type="text"
+                id="busca"
+                placeholder="Pesquisar"
+                onkeyup="listarAlunos()">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Matrícula</th>
+                        <th>Curso</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tabela"></tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
